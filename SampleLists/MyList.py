@@ -24,6 +24,9 @@ class MyList:
             self.items.append(item)
         return self.items
 
+    def get_item_index(self, item):
+        return 'item {0} index is {1}'.format(item, self.items.index(item))
+
     def show_all_items(self):
         """
         :return: returns all items of the current object.
