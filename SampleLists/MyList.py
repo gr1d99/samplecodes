@@ -39,6 +39,14 @@ class MyList:
         """
         return len(self.items)
 
+    def replace_item_using_its_index(self, item_index, new_item):
+        try:
+            self.items[item_index] = new_item
+        except IndexError:
+            raise IndexError('index %s is out of range' % item_index)
+        else:
+            return self.items
+
     def remove_specific_item(self, item):
         """
         :param item: refers to the specific item in the list that you want to remove.
