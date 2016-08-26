@@ -139,14 +139,12 @@ def marital_status(fname, lname, status='Single', country='Kenya'):
     Usage:
     ``necessary params``
 
-    >>> marital_status('John', 'Doe')
-    >>> 'John Doe is currently Single and lives in Kenya'
+        >>> marital_status('John', 'Doe')
 
     Usage:
     ``passing optional params``
 
-    >>> marital_status('John', 'Doe', 'Married', 'Madagascar')
-    >>> 'John Doe is currently Married and lives in Madagascar'
+        >>> marital_status('John', 'Doe', 'Married', 'Madagascar')
 
     Note:
         Notice the difference when optional params are passed into the function.
@@ -181,11 +179,6 @@ def my_args(*args):
     usage:
         >>> a = [1,2,3,4,5]
         >>> my_args(*a)
-            1
-            2
-            3
-            4
-            5
 
     """
     for arg in args:
@@ -202,9 +195,8 @@ def my_kwargs(**kwargs):
             '1': 1,
             '2': 2,
         }
+
         >>> my_kwargs(**my_dict)
-            1: 1
-            2: 2
 
     """
     for k, v in kwargs.items():
@@ -214,9 +206,14 @@ def my_kwargs(**kwargs):
 # ====================================
 # Decorators
 """
+decorators dynamically alter the functionality of a function,
+method or class without having to directly use subclasses.
+
+This is ideal when you need to extend the functionality of functions
+that you don't want to modify.
+
 Lets write a simple decorator that returns a persons
 full names.
-
 """
 
 
@@ -228,6 +225,11 @@ def my_decorator(func):
 
 @my_decorator
 def get_full_names(full_name):
+    """
+    Usage:
+        >>>get_full_names('John Doe')
+
+    """
     return full_name
 
 # Decorating methods
@@ -240,12 +242,18 @@ def my_method_decorator(func):
 
 
 class Names:
+    """
+    Usage:
+        >>>Names().get_all_full_names()
+    """
     def __init__(self):
-        self.names = 'Gideon'
+        self.names = 'John Doe'
 
     @my_method_decorator
-    def get_all_names(self):
+    def get_all_full_names(self):
         return self.names
+
+# Passing arguments to decorators
 
 
 
