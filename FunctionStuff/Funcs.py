@@ -1,3 +1,5 @@
+# For debugging purposes
+from functools import wraps
 # =========================================================================
 def some_notes():
     notes = """
@@ -222,6 +224,18 @@ def my_decorator(func):
         return 'Your names are {0}'.format(func(full_name))
     return func_wrapper
 
+# ===========================================================
+# debugging.
+# ignore.
+
+# ===========================================================
+# def my_decorator(func):
+#     @wraps(func)
+#     def func_wrapper(full_name):
+#         return 'Your names are {0}'.format(func(full_name))
+#     return func_wrapper
+# ===========================================================
+
 
 @my_decorator
 def get_full_names(full_name):
@@ -254,7 +268,6 @@ class Names:
         return self.names
 
 # Passing arguments to decorators
-
 
 
 
