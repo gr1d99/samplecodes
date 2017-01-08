@@ -1,6 +1,9 @@
 # For debugging purposes
 from functools import wraps
+import logging
 # =========================================================================
+
+
 def some_notes():
     notes = """
     A function is asequence of statements which perfom some kind of a task.
@@ -267,9 +270,16 @@ class Names:
     def get_all_full_names(self):
         return self.names
 
-# Passing arguments to decorators
 
+def generate_drivers(dr_num):
+    d = []
+    d_list = []
+    for i in zip(['d' for d in range(dr_num)], range(dr_num)):
+        d.append(i)
 
+    for dr in d:
+        d_list.append(dict([dr]))
 
+    return d_list
 
 

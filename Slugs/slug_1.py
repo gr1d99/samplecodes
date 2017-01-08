@@ -38,7 +38,7 @@ def slugify(value):
     return clean_str
 
 
-def sample_1(**kwargs):
+def create_slug(**kwargs):
     result = {}
     if not kwargs:
         raise KwargsRequired(
